@@ -1,0 +1,37 @@
+{
+  "manifest_version": 3,
+  "name": "Extension",
+  "version": "1.0",
+  "description": "Send bulk emails via Gmail",
+  "action": {
+    "default_icon": {
+      "16": "images/icon16.png",
+      "48": "images/icon48.png",
+      "128": "images/icon128.png"
+    },
+    "default_popup": "popup.html",
+    "default_title": "Extension"
+  },
+  "icons": {
+    "16": "images/icon16.png",
+    "48": "images/icon48.png",
+    "128": "images/icon128.png"
+  },
+  "permissions": [
+    "activeTab",
+    "storage",
+    "tabs",
+    "identity"
+  ],
+  "oauth2": {
+    "client_id": "1043399388557-chu1tbavf44q1vb3khcntgee02ue3b2i.apps.googleusercontent.com",
+    "scopes": ["https://www.googleapis.com/auth/gmail.send"],
+    "redirect_uris": ["https://iafahpbgfopopcanjfcgjmgedkdafcjb.chromiumapp.org/oauth2callback"]
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://mail.google.com/mail/*"],
+      "js": ["content.js"]
+    }
+  ]
+}
